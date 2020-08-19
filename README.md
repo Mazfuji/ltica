@@ -17,7 +17,7 @@ sudo systemctl enable docker
 sudo systemctl start docker
 ```
 
-## Using node.js
+## Docker and node.js
 
 `rpi-gpio` is better. Dockerfile is following.
 
@@ -30,7 +30,13 @@ RUN apt-get update && \
     groupadd -g 997 gpio
 ```
 
-JavaScript of the Blinking the LED.
+Build the container.
+
+```
+docker build -t node-test .
+```
+
+JavaScript of the Blinking the LED is following.
 
 ```javascript
 var gpio = require('rpi-gpio').promise;
